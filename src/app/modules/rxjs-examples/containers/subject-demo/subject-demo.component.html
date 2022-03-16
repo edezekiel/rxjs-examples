@@ -1,0 +1,18 @@
+<p>Subject and BehaviorSubject examples.</p>
+
+<label for="user-select">Select a User:</label>
+<select
+  name="user"
+  id="user-select"
+  (change)="onSelected($any($event.target).value)"
+>
+  <option *ngFor="let user of users$ | async" [value]="user.id">
+    {{ user.name }}
+  </option>
+</select>
+
+<div *ngIf="selectedUser$ | async as selectedUser; else loading">
+  <p>Name: {{ selectedUser.name }}</p>
+  <p>Catchphrase: {{ selectedUser.catchphrase }}</p>
+</div>
+<ng-template #loading><p>Loading...</p></ng-template>

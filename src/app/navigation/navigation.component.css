@@ -1,0 +1,9 @@
+.navigation__nav-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-button:hover {
+  color: var(--brand);
+}
